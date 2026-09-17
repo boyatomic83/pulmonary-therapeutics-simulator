@@ -1,0 +1,6 @@
+{
+  "name": "Inhaled Therapeutics Simulator",
+  "description": "Interactive simulator for inhaled nanoparticle and biological respiratory therapeutics combining aerosol deposition physics, pulmonary mucosal PK, disease modifiers, and anti-inflammatory pharmacodynamics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
