@@ -28,5 +28,5 @@ def calculate_auc(time_grid: np.ndarray, values: np.ndarray) -> float:
     """
     Computes trapezoidal Area Under the Curve (AUC).
     """
-    # return float(np.trapz(values, time_grid))
-    return float(np.trapezoid(values, time_grid))
+    return float(np.trapz(values, time_grid))
+    # return float(np.trapezoid(values, time_grid))
