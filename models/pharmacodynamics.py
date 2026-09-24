@@ -24,9 +24,17 @@ def calculate_efficacy(dt_array: np.ndarray, emax: float = 100.0, ec50: float = 
     denominator = np.where(denominator <= 0.0, 1e-9, denominator)
     return (emax * dt_clean) / denominator
 
-def calculate_auc(time_grid: np.ndarray, values: np.ndarray) -> float:
+# def calculate_auc(time_grid: np.ndarray, values: np.ndarray) -> float:
+#     """
+#     Computes trapezoidal Area Under the Curve (AUC).
+#     """
+#     return float(np.trapz(values, time_grid))
+#     # return float(np.trapezoid(values, time_grid))
+
+def calculate_auc(values, time_grid):
     """
-    Computes trapezoidal Area Under the Curve (AUC).
+    Computes trapezoidal Area Under the Curve (AUC) safely for NumPy 1.x and 2.x.
     """
+    if hasattr(np, "trapezoid"):
+        return float(np.trapezoid(values, time_grid))
     return float(np.trapz(values, time_grid))
-    # return float(np.trapezoid(values, time_grid))
